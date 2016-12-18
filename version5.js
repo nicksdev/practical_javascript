@@ -1,7 +1,10 @@
 var todoList = {
     todos: [],
     displayTodos: function() {
-        console.log("My todo's are", this.todos);
+        console.log("My todo's are");
+        for (var i = 0; i < this.todos.length; i++){
+            console.log(this.todos[i].todoText);
+        };
     },
     addTodo: function(todoText) {
         this.todos.push({
@@ -26,7 +29,9 @@ var todoList = {
 
 };
 
-todoList.addTodo("refactor");
-todoList.changeTodo(0, "updated");
-todoList.toggleCompleted(0);
+todoList.addTodo("first");
+todoList.addTodo("second");
+todoList.addTodo("third");
+todoList.displayTodos();
 
+//todoList.toggleCompleted(0);
