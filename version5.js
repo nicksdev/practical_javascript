@@ -1,17 +1,27 @@
 var todoList = {
     todos: [],
     displayTodos: function() {
-        console.log("My todo's are");
-        for (var i = 0; i < this.todos.length; i++){
-            console.log(this.todos[i].todoText);
-        };
+        if (this.todos.length === 0) {
+            console.log("You have NOTHING to do today - go home!");
+        } else {
+            console.log("My todo's are");
+            for (var i = 0; i < this.todos.length; i++){
+                if (this.todos[i].completed === false){
+                    console.log("( )", this.todos[i].todoText);
+                } else {
+                    console.log("(X)", this.todos[i].todoText);
+                }
+            }
+        }
     },
+
+
     addTodo: function(todoText) {
         this.todos.push({
             todoText: todoText,
             completed: false
         });
-        this.displayTodos();
+        //this.displayTodos();
     },
     changeTodo: function(position, todoText) {
         this.todos[position].todoText = todoText;
@@ -24,7 +34,7 @@ var todoList = {
     toggleCompleted: function(position) {
         var todo = this.todos[position];
         todo.completed = !todo.completed;
-        this.displayTodos();
+        //this.displayTodos();
     }
 
 };
@@ -32,6 +42,8 @@ var todoList = {
 todoList.addTodo("first");
 todoList.addTodo("second");
 todoList.addTodo("third");
+
+todoList.toggleCompleted(1);
+
 todoList.displayTodos();
 
-//todoList.toggleCompleted(0);
