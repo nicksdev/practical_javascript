@@ -35,14 +35,42 @@ var todoList = {
         var todo = this.todos[position];
         todo.completed = !todo.completed;
         //this.displayTodos();
-    }
+    },
 
+    toggleAll: function() {
+        var totalTodos = this.todos.length;
+        var completedTodos = 0;
+
+        // Get number of completed todos
+
+        for (var i = 0; i < totalTodos; i++){
+            if (this.todos[i].completed === true){
+                completedTodos++;
+            }
+        }
+
+        if (completedTodos === totalTodos) {
+            //make everything false.
+            for (var i = 0; i < totalTodos; i++) {
+                    this.todos[i].completed = false;
+            }
+        } else {
+            for (var i = 0; i < totalTodos; i++) {
+                this.todos[i].completed = true;
+            }
+        }
+    }
 };
 
 todoList.addTodo("first");
 todoList.addTodo("second");
 todoList.addTodo("third");
 
-todoList.toggleCompleted(1);
+todoList.toggleCompleted(0);
+//todoList.toggleCompleted(1);
+todoList.toggleCompleted(2);
 
+todoList.displayTodos();
+
+todoList.toggleAll();
 todoList.displayTodos();
