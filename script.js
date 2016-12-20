@@ -70,13 +70,10 @@ var handlers = {
     },
     toggleAll: function() {
         todoList.toggleAll();
+    },
+    addTodo: function() {
+        var addTodoTextInput = document.getElementById("addTodoTextInput");
+        todoList.addTodo(addTodoTextInput.value);
     }
 
 };
-
-
-
-todoList.addTodo("first");
-todoList.addTodo("second");
-todoList.addTodo("third");
-
