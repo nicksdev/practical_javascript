@@ -63,32 +63,20 @@ var todoList = {
     }
 };
 
-//Access display todos button
-var displayTodosButton = document.getElementById("displayTodosButton");
 
-// When click display Todos buttton, run display todos
-displayTodosButton.addEventListener("click", function() {
-    todoList.displayTodos();
-});
+var handlers = {
+    displayTodos: function() {
+        todoList.displayTodos();
+    },
+    toggleAll: function() {
+        todoList.toggleAll();
+    }
 
-// When click Toggle All button, toggle the status of the Todos.
-var toggleAllButton = document.getElementById("toggleAllButton");
-
-toggleAllButton.addEventListener("click", function() {
-   todoList.toggleAll();
-});
+};
 
 
 
 todoList.addTodo("first");
 todoList.addTodo("second");
 todoList.addTodo("third");
-//
-// todoList.toggleCompleted(0);
-// //todoList.toggleCompleted(1);
-// todoList.toggleCompleted(2);
-//
-// todoList.displayTodos();
-//
-// todoList.toggleAll();
-// todoList.displayTodos();
+
