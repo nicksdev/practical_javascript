@@ -1,6 +1,0 @@
-        todoList.todos.forEach(function(todo) {
-            if (todo.completed === true) {
-                todoTextWithCompletion = "(X) " + todo.todoText;
-            } else {
-                todoTextWithCompletion = "( ) " + todo.todoText;
-            }
